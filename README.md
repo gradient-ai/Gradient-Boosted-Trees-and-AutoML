@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This repository is to show an example of using non-deep-learning machine learning on Gradient. It accompanies the blog entry (**TODO**: Link when live) "Gradient Boosted Trees and AutoML" on the [Paperspace blog](https://blog.paperspace.com).
+This repository is to show an example of using non-deep-learning machine learning on Gradient. It accompanies the blog entry "Gradient Boosted Trees and AutoML" on the [Paperspace blog](https://blog.paperspace.com). (**TODO**: Link when live)
 
-Many enterprises and other ML users have problems best solved by machine learning methods other than deep learning. This may be for reasons of interpretability, robustness to real-world data, regulatory requirements, available computing power or time, approved software, or available expertise. Gradient is able to support these approaches by enabling the use of such tools.
+Many enterprises and other machine learning (ML) users have problems best solved by ML methods other than deep learning. This may be for reasons of interpretability, robustness to real-world data, regulatory requirements, available computing power or time, approved software, or available expertise. Gradient is able to support these approaches by enabling the use of such tools.
 
 The project consists of 3 parts that can be run independently:
 
@@ -12,11 +12,11 @@ The project consists of 3 parts that can be run independently:
 * **Workflow**: Same as notebook but in a Gradient Workflow
 * **Command line**: Deployment of model to production
 
-The most common successful ML on real business problems is Gradient Boosted decision trees (GBTs, not to be confused with the text models GPTs), which have been used extensively in the enterprise. They have also won most Kaggle competitions that were not won by deep learning.
+The most common successful ML on real business problems is Gradient Boosted decision trees (GBTs, not to be confused with the text models GPTs, or Paperspace Gradient :) ), which have been used extensively in the enterprise. They have also won most Kaggle competitions that were not won by deep learning.
 
 TensorFlow and PyTorch are not state-of-the-art for ML outside of deep learning. We therefore use GBTs via the well-known open source [H2O](http://h2o.ai) library of ML models. This incorporate both XGBoost and other functionality such as [AutoML](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html) (smart hyperparameter search, not no-code), GPUs, and large scale training and deployment.
 
-Last updated: Jul 16th 2021
+Last updated: Jul 20th 2021
 
 ## To run the Notebook (basic)
 
@@ -24,14 +24,14 @@ Run from the Gradient ML Showcase page. (Link to follow when it is live.)
 
 Or run the Notebook file on Gradient
 
- - Clone this repository to your machine: `git clone https://github.com/gradient-ai/Classical-ML-Example`
+ - Clone this repository to your machine: `git clone https://github.com/gradient-ai/Gradient-Boosting-and-AutoML`
  - In the Gradient GUI, create a Notebook with the following settings:
    - Name = H2O Workflow (or any allowed name)
    - Select a runtime = TensorFlow 2.4.1 (the project doesn't use TensorFlow, but this container is suitable)
-   - Select a machine = P4000
+   - Select a machine = C5
    - Public/private = set to preferred option
    - Advanced options = leave as default
- - Upload the file Notebook/automl_in_h2o.ipynb from this repo to the Gradient Notebook, along with the income.csv data
+ - Upload the file `Notebook/automl_in_h2o.ipynb` from this repo to the Gradient Notebook, along with the `income.csv` data
  - Run the Notebook in the [usual way](https://docs.paperspace.com/gradient/explore-train-deploy/notebooks)
 
 Notebook creation can also be done on the command line if desired, via `gradient notebooks create`.
@@ -48,7 +48,7 @@ With access to a Gradient Private Cluster, Workflows can be run as follows:
  - Use or create a [Gradient Private cluster](https://docs.paperspace.com/gradient/gradient-private-cloud/about/setup/managed-installation) and [its ID](https://docs.paperspace.com/gradient/gradient-private-cloud/about/usage#finding-your-cluster-id)
  - [Create a new Workflow](https://docs.paperspace.com/gradient/explore-train-deploy/workflows/getting-started-with-workflows#creating-gradient-workflows) via CLI or GUI and [get its ID](https://docs.paperspace.com/gradient/explore-train-deploy/workflows/getting-started-with-workflows#running-your-first-workflow-run)
  - [Create an output Dataset](https://docs.paperspace.com/gradient/data/data-overview/private-datasets-repository#creating-a-dataset-and-dataset-version) for the Workflow, in which the model can be saved
- - Add the Dataset's ID to the automl.yaml file in the place indicated in that file
+ - Add the Dataset's ID to the `automl.yaml` file in the place indicated in that file
  - [Import a placeholder file](https://docs.paperspace.com/gradient/data/data-overview/private-datasets-repository#creating-a-dataset-and-dataset-version) into the created output dataset using the GUI
 
 You can then run the Workflow from your command line with the appropriate substitutions into
@@ -75,30 +75,28 @@ The results can be viewed by navigating to the Workflows tab within the project 
 
 ## To run the model deployment (advanced)
 
-**IN PROGRESS**
-
- - Create notebook in a similar manner to the *To run the Notebook* section above, but using a C5 machine
+ - Create notebook in a similar manner to the *To run the Notebook* section above, using a C5 machine
  - Open Jupyter notebook interface
  - Open terminal
  - Enter command `bash`
- - Clone this repo, which is public: `git clone https://github.com/gradient-ai/Classical-ML-Example`
+ - Clone this repo, which is public: `git clone https://github.com/gradient-ai/Gradient-Boosting-and-AutoML`
  - Enter command `apt-get update`
  - Install Maven: `apt install maven` (this also installs Java)
  - You can see the versions with `mvn --version`, `java -version`, or other usual diagnostics like `which java`
- - Go to the Java directory: `cd Classical-ML-Example/Command_Line` (**TODO**: rename from javalintest-1.0-jar-with-dependencies.jar?)
+ - Go to the Java directory: `cd Gradient-Boosting-and-AutoML/Command_Line`
  - Build the project: `mvn clean package` (should say `BUILD SUCCESS` close to the end of the output)
- - Run the model: `java -jar target/javalintest-1.0-jar-with-dependencies.jar`
+ - Run the model: `java -jar target/gbtautomlinfer-1.0-jar-with-dependencies.jar`
  - Open second terminal
  - Type `bash`
  - Send a row of inference data to the model [1]: `curl -X GET 'http://localhost:8080/predict?age=39&workclass=State-gov&fnlwgt=77516&education=Bachelors&education-num=13&marital-status=Never-married&occupation=Adm-clerical&relationship=Not-in-family&race=White&sex=Male&capital-gain=2174&capital-loss=0&hours-per-week=40'`
 
 If all goes well the `java -jar` step will show output that looks like
 
-![Deployed model](https://github.com/gradient-ai/Classical-ML-Example/blob/main/Command_Line/deployed_model_listening.png)
+![Deployed model](https://github.com/gradient-ai/Gradient-Boosting-and-AutoML/blob/main/Command_Line/deployed_model_listening.png)
 
 and the `curl` step will return a prediction from the model for the inference data row
 
-![Model response](https://github.com/gradient-ai/Classical-ML-Example/blob/main/Command_Line/deployed_model_response.png)
+![Model response](https://github.com/gradient-ai/Gradient-Boosting-and-AutoML/blob/main/Command_Line/deployed_model_response.png)
 
 You can exit the deployed model in the first terminal with `Ctrl+C`, and from the terminals and shut down the Notebook in the usual Gradient way.
 
