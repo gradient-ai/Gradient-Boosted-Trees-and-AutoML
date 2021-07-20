@@ -24,7 +24,7 @@ Run from the Gradient ML Showcase page. (Link to follow when it is live.)
 
 Or run the Notebook file on Gradient
 
- - Clone this repository to your machine: `git clone https://github.com/gradient-ai/Gradient-Boosting-and-AutoML`
+ - Clone this repository to your machine: `git clone https://github.com/gradient-ai/Gradient-Boosted-Trees-and-AutoML`
  - In the Gradient GUI, create a Notebook with the following settings:
    - Name = H2O Workflow (or any allowed name)
    - Select a runtime = TensorFlow 2.4.1 (the project doesn't use TensorFlow, but this container is suitable)
@@ -79,11 +79,11 @@ The results can be viewed by navigating to the Workflows tab within the project 
  - Open Jupyter notebook interface
  - Open terminal
  - Enter command `bash`
- - Clone this repo, which is public: `git clone https://github.com/gradient-ai/Gradient-Boosting-and-AutoML`
+ - Clone this repo, which is public: `git clone https://github.com/gradient-ai/Gradient-Boosted-Trees-and-AutoML`
  - Enter command `apt-get update`
  - Install Maven: `apt install maven` (this also installs Java)
  - You can see the versions with `mvn --version`, `java -version`, or other usual diagnostics like `which java`
- - Go to the Java directory: `cd Gradient-Boosting-and-AutoML/Command_Line`
+ - Go to the Java directory: `cd Gradient-Boosted-Trees-and-AutoML/Command_Line`
  - Build the project: `mvn clean package` (should say `BUILD SUCCESS` close to the end of the output)
  - Run the model: `java -jar target/gbtautomlinfer-1.0-jar-with-dependencies.jar`
  - Open second terminal
@@ -92,11 +92,11 @@ The results can be viewed by navigating to the Workflows tab within the project 
 
 If all goes well the `java -jar` step will show output that looks like
 
-![Deployed model](https://github.com/gradient-ai/Gradient-Boosting-and-AutoML/blob/main/Command_Line/deployed_model_listening.png)
+![Deployed model](https://github.com/gradient-ai/Gradient-Boosted-Trees-and-AutoML/blob/main/Command_Line/deployed_model_listening.png)
 
 and the `curl` step will return a prediction from the model for the inference data row
 
-![Model response](https://github.com/gradient-ai/Gradient-Boosting-and-AutoML/blob/main/Command_Line/deployed_model_response.png)
+![Model response](https://github.com/gradient-ai/Gradient-Boosted-Trees-and-AutoML/blob/main/Command_Line/deployed_model_response.png)
 
 You can exit the deployed model in the first terminal with `Ctrl+C`, and from the terminals and shut down the Notebook in the usual Gradient way.
 
