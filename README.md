@@ -1,7 +1,3 @@
-**TODO:** Items below marked TODO before sharing publicly
-
-## Introduction
- 
 This repository is to show an example of using non-deep-learning machine learning on Gradient. It accompanies the blog entry [Gradient Boosted Trees and AutoML](blog.paperspace.com/gradient-boosted-trees-automl-h2o) on the [Paperspace blog](https://blog.paperspace.com).
 
 Many enterprises and other machine learning (ML) users have problems best solved by ML methods other than deep learning. This may be for reasons of interpretability, robustness to real-world data, regulatory requirements, available computing power or time, approved software, or available expertise. Gradient is able to support these approaches by enabling the use of such tools.
@@ -39,8 +35,6 @@ Notebook creation can also be done on the command line if desired, via `gradient
 [1] The model as set up is small and so doesn't benefit from the addition of a GPU such as P4000, so C7 is preferred. C5 will also run but takes about 2x as long.
 
 ## To run the Workflow (advanced)
-
-**TODO**: When this repo is public, gbt_automl.yaml doesn't need GitHub authentication lines
 
 Gradient Workflows remain subject to some [caveats](https://docs.paperspace.com/gradient/get-started/tutorials-list/workflows-sample-project#caveats) due to not-yet-supported functionality.
 
@@ -131,9 +125,9 @@ The caveats that make the Workflows step complex at present will disappear in fu
 
 ## Links & Credits
 
- - [Blog entry](blog.paperspace.com/gradient-boosted-trees-automl-h2o)
- - [Gradient](https://gradient.paperspace.com)
+ - [Blog entry](blog.paperspace.com/gradient-boosted-trees-automl-h2o) for this project
  - [H2O AutoML](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html)
- - [H2O Java deployment example](https://medium.com/spikelab/building-a-machine-learning-application-using-h2o-ai-67ce3681df9c) on which ours is based
+ - [H2O Java deployment example](https://medium.com/spikelab/building-a-machine-learning-application-using-h2o-ai-67ce3681df9c) by Matias Aravena Gamboa at spikelab, on which ours is based
  - [Javalin](https://javalin.io)
- - [UCI income dataset](https://archive.ics.uci.edu/ml/datasets/census+income)
+ - [Paperspace Gradient](https://gradient.paperspace.com) 
+ - [UCI income dataset](https://archive.ics.uci.edu/ml/datasets/census+income), which we use slightly modified to save on data preparation. The UCI Machine Learning Repository is described further by Dua, D. and Graff, C. (2019). [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml). Irvine, CA: University of California, School of Information and Computer Science.
