@@ -9,7 +9,7 @@ import hex.genmodel.easy.RowData;
 public final class App {
 
     public static Integer port = 8080;
-    public static String modelPath = "/notebooks/Classical-ML-Example/Command_Line/StackedEnsemble_AllModels_AutoML_20210621_203855.zip";
+    public static String modelPath = "/notebooks/Gradient-Boosted-Trees-and-AutoML/Command_Line/StackedEnsemble_AllModels_AutoML_20210621_203855.zip";
 
     public static void main(String[] args) throws IOException {
         Model model = new Model(modelPath);
