@@ -48,7 +48,7 @@ With access to a Gradient Private Cluster, Workflows can be run as follows:
  - Use or create a [Gradient Private cluster](https://docs.paperspace.com/gradient/gradient-private-cloud/about/setup/managed-installation) and [its ID](https://docs.paperspace.com/gradient/gradient-private-cloud/about/usage#finding-your-cluster-id)
  - [Create a new Workflow](https://docs.paperspace.com/gradient/explore-train-deploy/workflows/getting-started-with-workflows#creating-gradient-workflows) via CLI or GUI and [get its ID](https://docs.paperspace.com/gradient/explore-train-deploy/workflows/getting-started-with-workflows#running-your-first-workflow-run)
  - [Create an output Dataset](https://docs.paperspace.com/gradient/data/data-overview/private-datasets-repository#creating-a-dataset-and-dataset-version) for the Workflow, in which the model can be saved
- - Add the Dataset's ID to the `automl.yaml` file in the place indicated in that file
+ - Add the Dataset's ID to the `gbt_automl.yaml` file in the place indicated in that file
  - [Import a placeholder file](https://docs.paperspace.com/gradient/data/data-overview/private-datasets-repository#creating-a-dataset-and-dataset-version) into the created output dataset using the GUI
 
 You can then run the Workflow from your command line with the appropriate substitutions into
@@ -57,7 +57,7 @@ You can then run the Workflow from your command line with the appropriate substi
 gradient workflows run \
   --id         <your workflow ID> \
   --clusterId  <Your private cluster ID> \
-  --path       your/path/to/automl.yaml \
+  --path       your/path/to/gbt_automl.yaml \
   --apiKey     <Your API key>
 ```
 
@@ -67,7 +67,7 @@ It will look something like
 gradient workflows run \
   --id         abc123de-f567-ghi8-90jk-l123mno456pq \
   --clusterId  cdefghijk \
-  --path       ./Workflow/automl.yaml \
+  --path       ./Workflow/gbt_automl.yaml \
   --apiKey     ab12cd34ef56gh78ij90kl12mn34op
 ```
 
