@@ -26,7 +26,7 @@ h2o.init()
 
 # Prepare data
 
-df = h2o.import_file(path = "income.csv")
+df = h2o.import_file(path = "../income.csv")
 print(df)
 print(df.summary())
 
