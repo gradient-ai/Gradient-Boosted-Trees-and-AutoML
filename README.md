@@ -2,7 +2,9 @@
 
 ## Introduction
 
-This repository is to show an example of using non-deep-learning machine learning on Gradient. It accompanies the blog entry "Gradient Boosted Trees and AutoML" on the [Paperspace blog](https://blog.paperspace.com). (**TODO**: Link when live)
+**TODO**: Add link when blog entry is live
+ 
+This repository is to show an example of using non-deep-learning machine learning on Gradient. It accompanies the blog entry "Gradient Boosted Trees and AutoML" on the [Paperspace blog](https://blog.paperspace.com).
 
 Many enterprises and other machine learning (ML) users have problems best solved by ML methods other than deep learning. This may be for reasons of interpretability, robustness to real-world data, regulatory requirements, available computing power or time, approved software, or available expertise. Gradient is able to support these approaches by enabling the use of such tools.
 
@@ -28,7 +30,7 @@ Or run the Notebook file on Gradient
  - In the Gradient GUI, create a Notebook with the following settings:
    - Name = H2O Workflow (or any allowed name)
    - Select a runtime = TensorFlow 2.4.1 (the project doesn't use TensorFlow, but this container is suitable)
-   - Select a machine = C7
+   - Select a machine = C7 [1]
    - Public/private = set to preferred option
    - Advanced options = leave as default
  - Upload the file `Notebook/automl_in_h2o.ipynb` from this repo to the Gradient Notebook, along with the `income.csv` data
@@ -36,7 +38,11 @@ Or run the Notebook file on Gradient
 
 Notebook creation can also be done on the command line if desired, via `gradient notebooks create`.
 
+[1] The model as set up is small and so doesn't benefit from the addition of a GPU such as P4000, so C7 is preferred. C5 will also run but takes about 2x as long.
+
 ## To run the Workflow (advanced)
+
+**TODO**: When this repo is public, gbt_automl.yaml doesn't need GitHub authentication lines
 
 Gradient Workflows remain subject to some [caveats](https://docs.paperspace.com/gradient/get-started/tutorials-list/workflows-sample-project#caveats) due to not-yet-supported functionality.
 
@@ -127,7 +133,9 @@ The caveats that make the Workflows step complex at present will disappear in fu
 
 ## Links & Credits
 
- - Blog entry (**TODO**: Link when live)
+**TODO**: Add link when blog entry is live
+
+ - Blog entry
  - [Gradient](https://gradient.paperspace.com)
  - [H2O AutoML](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html)
  - [H2O Java deployment example](https://medium.com/spikelab/building-a-machine-learning-application-using-h2o-ai-67ce3681df9c) on which ours is based
