@@ -1,3 +1,5 @@
+# Gradient Boosted Trees and AutoML
+
 This repository is to show an example of using non-deep-learning machine learning on Gradient. It accompanies the blog entry [Gradient Boosted Trees and AutoML](blog.paperspace.com/gradient-boosted-trees-automl-h2o) on the [Paperspace blog](https://blog.paperspace.com).
 
 Many enterprises and other machine learning (ML) users have problems best solved by ML methods other than deep learning. This may be for reasons of interpretability, robustness to real-world data, regulatory requirements, available computing power or time, approved software, or available expertise. Gradient is able to support these approaches by enabling the use of such tools.
