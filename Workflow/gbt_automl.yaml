@@ -54,6 +54,6 @@ jobs:
         pip install h2o==3.32.1.3
         pip install install-jdk==0.3.0
         cp -R /inputs/repo /gbt_automl
-        cd /gbt_automl
+        cd /gbt_automl/Workflow
         python gbt_automl.py
       image: tensorflow/tensorflow:2.4.1-gpu-jupyter
