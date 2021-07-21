@@ -1,10 +1,8 @@
 **TODO:** Items below marked TODO before sharing publicly
 
 ## Introduction
-
-**TODO**: Add link when blog entry is live
  
-This repository is to show an example of using non-deep-learning machine learning on Gradient. It accompanies the blog entry "Gradient Boosted Trees and AutoML" on the [Paperspace blog](https://blog.paperspace.com).
+This repository is to show an example of using non-deep-learning machine learning on Gradient. It accompanies the blog entry [Gradient Boosted Trees and AutoML](blog.paperspace.com/gradient-boosted-trees-automl-h2o) on the [Paperspace blog](https://blog.paperspace.com).
 
 Many enterprises and other machine learning (ML) users have problems best solved by ML methods other than deep learning. This may be for reasons of interpretability, robustness to real-world data, regulatory requirements, available computing power or time, approved software, or available expertise. Gradient is able to support these approaches by enabling the use of such tools.
 
@@ -133,9 +131,7 @@ The caveats that make the Workflows step complex at present will disappear in fu
 
 ## Links & Credits
 
-**TODO**: Add link when blog entry is live
-
- - Blog entry
+ - [Blog entry](blog.paperspace.com/gradient-boosted-trees-automl-h2o)
  - [Gradient](https://gradient.paperspace.com)
  - [H2O AutoML](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html)
  - [H2O Java deployment example](https://medium.com/spikelab/building-a-machine-learning-application-using-h2o-ai-67ce3681df9c) on which ours is based
