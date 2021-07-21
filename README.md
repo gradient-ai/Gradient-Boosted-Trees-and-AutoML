@@ -16,7 +16,7 @@ The most common successful ML on real business problems is Gradient Boosted deci
 
 TensorFlow and PyTorch are not state-of-the-art for ML outside of deep learning. We therefore use GBTs via the well-known open source [H2O](http://h2o.ai) library of ML models. This incorporate both XGBoost and other functionality such as [AutoML](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html) (smart hyperparameter search, not no-code), GPUs, and large scale training and deployment.
 
-Last updated: Jul 20th 2021
+Last updated: Jul 21st 2021
 
 ## To run the Notebook (basic)
 
@@ -28,7 +28,7 @@ Or run the Notebook file on Gradient
  - In the Gradient GUI, create a Notebook with the following settings:
    - Name = H2O Workflow (or any allowed name)
    - Select a runtime = TensorFlow 2.4.1 (the project doesn't use TensorFlow, but this container is suitable)
-   - Select a machine = C5
+   - Select a machine = C7
    - Public/private = set to preferred option
    - Advanced options = leave as default
  - Upload the file `Notebook/automl_in_h2o.ipynb` from this repo to the Gradient Notebook, along with the `income.csv` data
@@ -75,7 +75,7 @@ The results can be viewed by navigating to the Workflows tab within the project 
 
 ## To run the model deployment (advanced)
 
- - Create notebook in a similar manner to the *To run the Notebook* section above, using a C5 machine
+ - Create notebook in a similar manner to the *To run the Notebook* section above, using a C5 or C7 machine
  - Open Jupyter notebook interface
  - Open terminal
  - Enter command `bash`
