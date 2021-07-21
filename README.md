@@ -81,7 +81,7 @@ The results can be viewed by navigating to the Workflows tab within the project 
  - Enter command `bash`
  - Clone this repo, which is public: `git clone https://github.com/gradient-ai/Gradient-Boosted-Trees-and-AutoML`
  - Enter command `apt-get update`
- - Install Maven: `apt install maven` (this also installs Java)
+ - Install Maven: `apt install maven` (this also installs Java; answer yes to `Do you want to continue? [Y/n]` by pressing Enter)
  - You can see the versions with `mvn --version`, `java -version`, or other usual diagnostics like `which java`
  - Go to the Java directory: `cd Gradient-Boosted-Trees-and-AutoML/Command_Line`
  - Build the project: `mvn clean package` (should say `BUILD SUCCESS` close to the end of the output)
