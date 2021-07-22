@@ -107,7 +107,7 @@ You can exit the deployed model in the first terminal with `Ctrl+C`, and then fr
 
 *Notes*
 
-[1] If you did, the command would be `git clone https://github.com/gradient-ai/Gradient-Boosted-Trees-and-AutoML`, but would push the directories down one level to be in `Gradient-Boosted-Trees-and-AutoML/`. You would then have to edit the `App.java` file, or move the files back one level up.
+[1] If you did clone the repo again, the command would be `git clone https://github.com/gradient-ai/Gradient-Boosted-Trees-and-AutoML`, but would push the directories down one level to be in `Gradient-Boosted-Trees-and-AutoML/`. You would then have to edit the `App.java` file, or move the files back one level up.
 
 [2] The project was tested with Apache Maven 3.6.0 and Java 11.0.11
 
