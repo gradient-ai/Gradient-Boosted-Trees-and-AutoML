@@ -6,9 +6,9 @@ Many enterprises and other machine learning (ML) users have problems best solved
 
 The project and repo consist of 3 parts that can be run independently:
 
-* **Notebook/**: Gradient Boosted Trees and AutoML, no deployment
-* **Workflow/**: Same as notebook but in a Gradient Workflow
-* **Command_Line/**: Deployment of model to production
+* **Notebook/** = Gradient Boosted Trees and AutoML, no deployment
+* **Workflow/** = Same as notebook but in a Gradient Workflow
+* **Command_Line/** = Deployment of model to production
 
 The most common successful ML on real business problems is Gradient Boosted decision trees (GBTs, not to be confused with the text models GPTs, or Paperspace Gradient :) ), which have been used extensively in the enterprise. They have also won most Kaggle competitions that were not won by deep learning.
 
@@ -47,7 +47,7 @@ With access to a Gradient Private Cluster, Workflows can be run as follows:
  - [Create a project](https://docs.paperspace.com/gradient/get-started/managing-projects#create-a-project) and optionally [get its ID](https://docs.paperspace.com/gradient/get-started/managing-projects#get-your-projects-id)
  - [Generate an API key](https://docs.paperspace.com/gradient/get-started/quick-start/install-the-cli#obtaining-an-api-key) for your project to allow access, using Team settings under the GUI top-right dropdown menu
  - [Install the Gradient CLI](https://docs.paperspace.com/gradient/get-started/quick-start/install-the-cli) on your machine
- - Use or create a [Gradient Private cluster](https://docs.paperspace.com/gradient/gradient-private-cloud/about/setup/managed-installation) and [its ID](https://docs.paperspace.com/gradient/gradient-private-cloud/about/usage#finding-your-cluster-id)
+ - Use or create a [Gradient Private cluster](https://docs.paperspace.com/gradient/gradient-private-cloud/about/setup/managed-installation) and [get its ID](https://docs.paperspace.com/gradient/gradient-private-cloud/about/usage#finding-your-cluster-id)
  - [Create a new Workflow](https://docs.paperspace.com/gradient/explore-train-deploy/workflows/getting-started-with-workflows#creating-gradient-workflows) via CLI or GUI and [get its ID](https://docs.paperspace.com/gradient/explore-train-deploy/workflows/getting-started-with-workflows#running-your-first-workflow-run)
  - [Create an output Dataset](https://docs.paperspace.com/gradient/data/data-overview/private-datasets-repository#creating-a-dataset-and-dataset-version) for the Workflow, in which the model can be saved
  - Add the Dataset's ID to the `gbt_automl.yaml` file in the place indicated in that file, replacing the ID that is present there
