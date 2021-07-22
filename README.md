@@ -140,4 +140,4 @@ The caveats that make the Workflows step complex at present will disappear in fu
  - [Paperspace Gradient](https://gradient.paperspace.com) 
  - [UCI income dataset](https://archive.ics.uci.edu/ml/datasets/census+income), which we use slightly modified to save on data preparation. The UCI Machine Learning Repository is described further by Dua, D. and Graff, C. (2019). [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml). Irvine, CA: University of California, School of Information and Computer Science.
 
-Thanks to Tom Sanfillipino at Paperspace for help with the Java, and to David Banys at Paperspace for help setting up this project as an ML Showcase.
+Thanks to Tom Sanfilippo at Paperspace for help with the Java, and to David Banys at Paperspace for help setting up this project as an ML Showcase.
