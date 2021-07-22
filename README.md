@@ -29,7 +29,7 @@ Run the Notebook file using Gradient:
    - Select a runtime = TensorFlow 2.4.1 [1]
    - Select a machine = C7 [2]
    - Public/private = set to preferred option
-   - Under Advanced options, change the Workspace URL field from `https://github.com/gradient-ai/TF2.4.1.git` to `https://github.com/gradient-ai/Gradient-Boosted-Trees-and-AutoML`, i.e., to point to this repository. The other options can remain the same.
+   - Under Advanced options, change the Workspace URL field from `https://github.com/gradient-ai/TF2.4.1.git` to `https://github.com/gradient-ai/Gradient-Boosted-Trees-and-AutoML` to point to this repository. The other options can remain the same.
    - Start the Notebook
  - Once the Notebook has started, navigate to the `Notebook/` directory and click `automl_in_h2o.ipynb` to run the Notebook in the same way as from the Showcase
 
@@ -79,6 +79,8 @@ gradient workflows run \
 The results can be viewed by navigating to the Workflows tab within the project where you created your Workflow.
 
 ## To run the model deployment, from the command line (advanced)
+
+This can be run without requiring private cluster access.
 
  - Create notebook in a similar manner to the *To run the Notebook* section above, using a C5 or C7 machine, or use the one created from running that section
  - Open the Jupyter notebook interface by clicking the Jupyter symbol on the left-hand navigation bar
