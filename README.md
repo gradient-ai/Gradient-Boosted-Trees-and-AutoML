@@ -84,13 +84,13 @@ The results can be viewed by navigating to the Workflows tab within the project 
  - Since when the notebook was created, this repo was cloned, you do not need to clone it again [1]
  - Enter command `apt-get update`
  - Install Maven: `apt install maven` (this also installs Java; answer yes to `Do you want to continue? [Y/n]` by pressing Enter)
- - You can see the versions with `mvn --version`, `java -version`, or other usual diagnostics like `which java`
- - Go to the Java directory: `cd Gradient-Boosted-Trees-and-AutoML/Command_Line`
+ - You can see the versions with `mvn --version`, `java -version`, or other usual diagnostics like `which java` [2]
+ - Go to the Java directory: `cd Command_Line`
  - Build the project: `mvn clean package` (should say `BUILD SUCCESS` close to the end of the output)
  - Run the model: `java -jar target/gbtautomlinfer-1.0-jar-with-dependencies.jar`
- - Open second terminal
+ - Open second terminal in another browser tab, in the same way that the first one was opened
  - Type `bash`
- - Send a row of inference data to the model [2]: `curl -X GET 'http://localhost:8080/predict?age=39&workclass=State-gov&fnlwgt=77516&education=Bachelors&education-num=13&marital-status=Never-married&occupation=Adm-clerical&relationship=Not-in-family&race=White&sex=Male&capital-gain=2174&capital-loss=0&hours-per-week=40'`
+ - Send a row of inference data to the model [3]: `curl -X GET 'http://localhost:8080/predict?age=39&workclass=State-gov&fnlwgt=77516&education=Bachelors&education-num=13&marital-status=Never-married&occupation=Adm-clerical&relationship=Not-in-family&race=White&sex=Male&capital-gain=2174&capital-loss=0&hours-per-week=40'`
 
 If all goes well the `java -jar` step will show output that looks like
 
@@ -100,10 +100,11 @@ and the `curl` step will return a prediction from the model for the inference da
 
 ![Model response](https://github.com/gradient-ai/Gradient-Boosted-Trees-and-AutoML/blob/main/Command_Line/deployed_model_response.png)
 
-You can exit the deployed model in the first terminal with `Ctrl+C`, and from the terminals and shut down the Notebook in the usual Gradient way.
+You can exit the deployed model in the first terminal with `Ctrl+C`, and then from the terminals and shut down the Notebook in the usual Gradient way.
 
 [1] If you did, the command would be `git clone https://github.com/gradient-ai/Gradient-Boosted-Trees-and-AutoML`, but would push the directories down one level to be in `Gradient-Boosted-Trees-and-AutoML/`. You would then have to edit the `App.java` file, or move the files back one level up.
-[2] This row of inference data is in fact the first row of income.csv, already used in the training, but it shows the main point that the setup accepts inference data and the deployed model returns predictions. The inference data does not include the ground truth column, `yearly-income`, consistent with this being inference on new data.
+[2] The project was tested with Apache Maven 3.6.0 and Java 11.0.11
+[3] This row of inference data is in fact the first row of income.csv, already used in the training, but it shows the main point that the setup accepts inference data and the deployed model returns predictions. The inference data does not include the ground truth column, `yearly-income`, consistent with this being inference on new data.
 
 ### Details of the model deployment setup
 
@@ -136,3 +137,5 @@ The caveats that make the Workflows step complex at present will disappear in fu
  - [Javalin](https://javalin.io)
  - [Paperspace Gradient](https://gradient.paperspace.com) 
  - [UCI income dataset](https://archive.ics.uci.edu/ml/datasets/census+income), which we use slightly modified to save on data preparation. The UCI Machine Learning Repository is described further by Dua, D. and Graff, C. (2019). [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml). Irvine, CA: University of California, School of Information and Computer Science.
+
+Thanks to Tom Sanfillipino at Paperspace for help with the Java, and to David Banys at Paperspace for help setting up this project as an ML Showcase.
