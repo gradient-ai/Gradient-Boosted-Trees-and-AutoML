@@ -87,10 +87,10 @@ The results can be viewed by navigating to the Workflows tab within the project 
  - You can see the versions with `mvn --version`, `java -version`, or other usual diagnostics like `which java` [2]
  - Go to the Java directory: `cd Command_Line`
  - Build the project: `mvn clean package` (should say `BUILD SUCCESS` close to the end of the output)
- - Run the model: `java -jar target/gbtautomlinfer-1.0-jar-with-dependencies.jar`
+ - Run the model: `java -jar target/gbtautomlinfer-1.0-jar-with-dependencies.jar` [3]
  - Open second terminal in another browser tab, in the same way that the first one was opened
  - Type `bash`
- - Send a row of inference data to the model [3]: `curl -X GET 'http://localhost:8080/predict?age=39&workclass=State-gov&fnlwgt=77516&education=Bachelors&education-num=13&marital-status=Never-married&occupation=Adm-clerical&relationship=Not-in-family&race=White&sex=Male&capital-gain=2174&capital-loss=0&hours-per-week=40'`
+ - Send a row of inference data to the model [4]: `curl -X GET 'http://localhost:8080/predict?age=39&workclass=State-gov&fnlwgt=77516&education=Bachelors&education-num=13&marital-status=Never-married&occupation=Adm-clerical&relationship=Not-in-family&race=White&sex=Male&capital-gain=2174&capital-loss=0&hours-per-week=40'`
 
 If all goes well the `java -jar` step will show output that looks like
 
@@ -106,7 +106,9 @@ You can exit the deployed model in the first terminal with `Ctrl+C`, and then fr
 
 [2] The project was tested with Apache Maven 3.6.0 and Java 11.0.11
 
-[3] This row of inference data is in fact the first row of income.csv, already used in the training, but it shows the main point that the setup accepts inference data and the deployed model returns predictions. The inference data does not include the ground truth column, `yearly-income`, consistent with this being inference on new data.
+[3] Users may note that we are deploying the model already present in the repo, rather than the one output by the Notebook or Workflow steps. But they are all instances of training the same model on the same data, so supplying a trained model keeps the Notebook, Workflow, and command line sections of the project independent, while not affecting the results.
+
+[4] This row of inference data is in fact the first row of income.csv, already used in the training, but it shows the main point that the setup accepts inference data and the deployed model returns predictions. The inference data does not include the ground truth column, `yearly-income`, consistent with this being inference on new data.
 
 ### Details of the model deployment setup
 
