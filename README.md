@@ -103,7 +103,9 @@ and the `curl` step will return a prediction from the model for the inference da
 You can exit the deployed model in the first terminal with `Ctrl+C`, and then from the terminals and shut down the Notebook in the usual Gradient way.
 
 [1] If you did, the command would be `git clone https://github.com/gradient-ai/Gradient-Boosted-Trees-and-AutoML`, but would push the directories down one level to be in `Gradient-Boosted-Trees-and-AutoML/`. You would then have to edit the `App.java` file, or move the files back one level up.
+
 [2] The project was tested with Apache Maven 3.6.0 and Java 11.0.11
+
 [3] This row of inference data is in fact the first row of income.csv, already used in the training, but it shows the main point that the setup accepts inference data and the deployed model returns predictions. The inference data does not include the ground truth column, `yearly-income`, consistent with this being inference on new data.
 
 ### Details of the model deployment setup
