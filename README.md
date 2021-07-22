@@ -113,7 +113,7 @@ You can exit the deployed model in the first terminal with `Ctrl+C`, and then fr
 
 [3] Users may note that we are deploying the model already present in the repo, rather than the one output by the user's running of the Notebook or Workflow steps. But the one supplied was created in the same way, so they are all instances of training the same model on the same data. Supplying a trained model keeps the Notebook, Workflow, and command line sections of the project independent, while not affecting the results.
 
-[4] This row of inference data is in fact the first row of income.csv, already used in the training, but it shows the main point that the setup accepts inference data and the deployed model returns predictions. The inference data does not include the ground truth column, `yearly-income`, consistent with this being inference on new data.
+[4] This row of inference data is in fact the first row of `income.csv`, already used in the training, but it shows the main point that the setup accepts inference data and the deployed model returns predictions. The inference data sent does not include the ground truth column, `yearly-income`, consistent with this being inference on new data.
 
 ### Details of the model deployment setup
 
