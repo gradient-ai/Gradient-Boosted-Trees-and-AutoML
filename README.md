@@ -8,11 +8,11 @@ The project and repo consist of 3 parts that can be run independently:
 
 * **Notebook/** = Gradient Boosted Trees and AutoML, no deployment
 * **Workflow/** = Same as notebook but in a Gradient Workflow
-* **Command_Line/** = Deployment of model to production
+* **Command_Line/** = **Deployment** of model to production
 
-The most common successful ML on real business problems is Gradient Boosted decision trees (GBTs, not to be confused with the text models GPTs, or Paperspace Gradient :) ), which have been used extensively in the enterprise. They have also won most Kaggle competitions that were not won by deep learning.
+The most common successful ML models on real business problems aside from deep learning are **Gradient Boosted decision trees** (GBTs, not to be confused with the text models GPTs, or Paperspace Gradient :) ), which have been used extensively in the enterprise. They have also won most Kaggle competitions that were not won by deep learning.
 
-TensorFlow and PyTorch are not state-of-the-art for ML outside of deep learning. We therefore use GBTs via the well-known open source [H2O](http://h2o.ai) library of ML models. This incorporate both XGBoost and other functionality such as [AutoML](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html) (smart hyperparameter search, not no-code), GPUs, and large scale training and deployment.
+TensorFlow and PyTorch are not state-of-the-art for ML outside of deep learning. We therefore use GBTs via the well-known open source [**H2O**](http://h2o.ai) library of ML models. This incorporate both **XGBoost** and other functionality such as [**AutoML**](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html) (smart hyperparameter search, not no-code), GPUs, and large scale training and deployment.
 
 Last updated: Jul 22nd 2021
 
