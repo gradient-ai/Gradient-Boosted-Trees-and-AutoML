@@ -77,11 +77,11 @@ The results can be viewed by navigating to the Workflows tab within the project 
 
 ## To run the model deployment, from the command line (advanced)
 
- - Create notebook in a similar manner to the *To run the Notebook* section above, using a C5 or C7 machine
- - Open Jupyter notebook interface
- - Open terminal
+ - Create notebook in a similar manner to the *To run the Notebook* section above, using a C5 or C7 machine, or use the one created from running that section
+ - Open the Jupyter notebook interface by clicking the Jupyter symbol on the left-hand navigation bar
+ - Open a terminal under the `New` dropdown menu and choosing `Terminal`
  - Enter command `bash`
- - Clone this repo, which is public: `git clone https://github.com/gradient-ai/Gradient-Boosted-Trees-and-AutoML`
+ - Since when the notebook was created, this repo was cloned, you do not need to clone it again [1]
  - Enter command `apt-get update`
  - Install Maven: `apt install maven` (this also installs Java; answer yes to `Do you want to continue? [Y/n]` by pressing Enter)
  - You can see the versions with `mvn --version`, `java -version`, or other usual diagnostics like `which java`
@@ -90,7 +90,7 @@ The results can be viewed by navigating to the Workflows tab within the project 
  - Run the model: `java -jar target/gbtautomlinfer-1.0-jar-with-dependencies.jar`
  - Open second terminal
  - Type `bash`
- - Send a row of inference data to the model [1]: `curl -X GET 'http://localhost:8080/predict?age=39&workclass=State-gov&fnlwgt=77516&education=Bachelors&education-num=13&marital-status=Never-married&occupation=Adm-clerical&relationship=Not-in-family&race=White&sex=Male&capital-gain=2174&capital-loss=0&hours-per-week=40'`
+ - Send a row of inference data to the model [2]: `curl -X GET 'http://localhost:8080/predict?age=39&workclass=State-gov&fnlwgt=77516&education=Bachelors&education-num=13&marital-status=Never-married&occupation=Adm-clerical&relationship=Not-in-family&race=White&sex=Male&capital-gain=2174&capital-loss=0&hours-per-week=40'`
 
 If all goes well the `java -jar` step will show output that looks like
 
@@ -102,7 +102,8 @@ and the `curl` step will return a prediction from the model for the inference da
 
 You can exit the deployed model in the first terminal with `Ctrl+C`, and from the terminals and shut down the Notebook in the usual Gradient way.
 
-[1] This row of inference data is in fact the first row of income.csv, already used in the training, but it shows the main point that the setup accepts inference data and the deployed model returns predictions. The inference data does not include the ground truth column, `yearly-income`, consistent with this being inference on new data.
+[1] If you did, the command would be `git clone https://github.com/gradient-ai/Gradient-Boosted-Trees-and-AutoML`, but would push the directories down one level to be in `Gradient-Boosted-Trees-and-AutoML/`. You would then have to edit the `App.java` file, or move the files back one level up.
+[2] This row of inference data is in fact the first row of income.csv, already used in the training, but it shows the main point that the setup accepts inference data and the deployed model returns predictions. The inference data does not include the ground truth column, `yearly-income`, consistent with this being inference on new data.
 
 ### Details of the model deployment setup
 
