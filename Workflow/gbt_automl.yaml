@@ -11,7 +11,7 @@
 #
 # The user needs to create their own Gradient managed datasets for job outputs to replace the IDs this file contains:
 #
-# modelOutputs -> "dsr1b0sq9bwmoxp"
+# modelOutputs -> "dstro9y6kduxqhl"
 #
 # Last updated: Jul 22nd 2021
 
@@ -43,7 +43,7 @@ jobs:
       modelOutputs:
         type: dataset
         with:
-          id: dsr1b0sq9bwmoxp
+          id: dstro9y6kduxqhl
     uses: script@v1
     with:
       script: |-
