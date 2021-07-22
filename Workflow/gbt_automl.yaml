@@ -11,15 +11,13 @@
 #
 # The user needs to create their own Gradient managed datasets for job outputs to replace the IDs this file contains:
 #
-# modelOutputs -> "dstro9y6kduxqhl"
+# modelOutputs -> "dsr1b0sq9bwmoxp"
 #
-# Last updated: Jul 21st 2021
+# Last updated: Jul 22nd 2021
 
 jobs:
 
   # Clone GitHub repository
-
-  ### Public version will not need "username:" and "password:" lines with GitHub credentials ###
 
   CloneRepo:
     resources:
@@ -30,8 +28,6 @@ jobs:
     uses: git-checkout@v1
     with:
       url: https://github.com/gradient-ai/Gradient-Boosted-Trees-and-AutoML
-      username: nmb-paperspace
-      password: secret:GITHUB_ACCESS_TOKEN
 
   # Run the analysis
 
@@ -47,7 +43,7 @@ jobs:
       modelOutputs:
         type: dataset
         with:
-          id: dstro9y6kduxqhl
+          id: dsr1b0sq9bwmoxp
     uses: script@v1
     with:
       script: |-
