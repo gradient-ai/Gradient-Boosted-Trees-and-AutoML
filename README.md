@@ -14,7 +14,7 @@ The most common successful ML on real business problems is Gradient Boosted deci
 
 TensorFlow and PyTorch are not state-of-the-art for ML outside of deep learning. We therefore use GBTs via the well-known open source [H2O](http://h2o.ai) library of ML models. This incorporate both XGBoost and other functionality such as [AutoML](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html) (smart hyperparameter search, not no-code), GPUs, and large scale training and deployment.
 
-Last updated: Jul 21st 2021
+Last updated: Jul 22nd 2021
 
 ## To run the Notebook (basic)
 
@@ -24,9 +24,9 @@ Or run the Notebook file on Gradient
 
  - Clone this repository to your machine: `git clone https://github.com/gradient-ai/Gradient-Boosted-Trees-and-AutoML`
  - In the Gradient GUI, create a Notebook with the following settings:
-   - Name = H2O Workflow (or any allowed name)
-   - Select a runtime = TensorFlow 2.4.1 (the project doesn't use TensorFlow, but this container is suitable)
-   - Select a machine = C7 [1]
+   - Name = Gradient Boosted Trees and AutoML (or any allowed name)
+   - Select a runtime = TensorFlow 2.4.1 [1]
+   - Select a machine = C7 [2]
    - Public/private = set to preferred option
    - Advanced options = leave as default
  - Upload the file `Notebook/automl_in_h2o.ipynb` from this repo to the Gradient Notebook, along with the `income.csv` data
@@ -34,7 +34,8 @@ Or run the Notebook file on Gradient
 
 Notebook creation can also be done on the command line if desired, via `gradient notebooks create`.
 
-[1] The model as set up is small and so doesn't benefit from the addition of a GPU such as P4000, so C7 is preferred. C5 will also run but takes about 2x as long.
+[1] The project does not use TensorFlow, but this container is suitable. Our suite of containers is being updated as the Workflows product develops.  
+[2] The model as set up is small and so doesn't benefit from the addition of a GPU such as P4000, so C7 is preferred. C5 will also run but takes about 2x as long.
 
 ## To run the Workflow (advanced)
 
