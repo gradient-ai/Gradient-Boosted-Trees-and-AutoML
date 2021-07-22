@@ -35,7 +35,10 @@ Run the Notebook file using Gradient:
 
 Notebook creation can also be done on the command line if desired, via `gradient notebooks create`. For more details on Notebooks, see the [documentation](https://docs.paperspace.com/gradient/explore-train-deploy/notebooks).
 
-[1] The project does not use TensorFlow, but this container is suitable. Our suite of containers is being updated as the Workflows product develops.  
+*Notes*
+
+[1] The project does not use TensorFlow, but this container is suitable. Our suite of containers is being updated as the Workflows product develops.
+
 [2] The model as set up is small and so doesn't benefit from the addition of a GPU such as P4000, so C7 is preferred. C5 will also run but takes about 2x as long.
 
 ## To run the Workflow (advanced)
@@ -101,6 +104,8 @@ and the `curl` step will return a prediction from the model for the inference da
 ![Model response](https://github.com/gradient-ai/Gradient-Boosted-Trees-and-AutoML/blob/main/Command_Line/deployed_model_response.png)
 
 You can exit the deployed model in the first terminal with `Ctrl+C`, and then from the terminals and shut down the Notebook in the usual Gradient way.
+
+*Notes*
 
 [1] If you did, the command would be `git clone https://github.com/gradient-ai/Gradient-Boosted-Trees-and-AutoML`, but would push the directories down one level to be in `Gradient-Boosted-Trees-and-AutoML/`. You would then have to edit the `App.java` file, or move the files back one level up.
 
