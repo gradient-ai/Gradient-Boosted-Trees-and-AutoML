@@ -18,28 +18,29 @@ Last updated: Jul 22nd 2021
 
 ## To run the Notebook (basic)
 
-Run from the Gradient ML Showcase page. (Link to follow when it is live.)
+Run from this project's entry on the [Gradient ML Showcase page](https://ml-showcase.paperspace.com/projects). When the Notebook is open, navigate to the `Notebook/` directory and click `automl_in_h2o.ipynb` to open the Notebook. It can then be run in the usual way by clicking `Run` under each cell in turn.
 
-Or run the Notebook file on Gradient
+OR
 
- - Clone this repository to your machine: `git clone https://github.com/gradient-ai/Gradient-Boosted-Trees-and-AutoML`
+Run the Notebook file using Gradient:
+
  - In the Gradient GUI, create a Notebook with the following settings:
    - Name = Gradient Boosted Trees and AutoML (or any allowed name)
    - Select a runtime = TensorFlow 2.4.1 [1]
    - Select a machine = C7 [2]
    - Public/private = set to preferred option
-   - Advanced options = leave as default
- - Upload the file `Notebook/automl_in_h2o.ipynb` from this repo to the Gradient Notebook, along with the `income.csv` data
- - Run the Notebook in the [usual way](https://docs.paperspace.com/gradient/explore-train-deploy/notebooks)
+   - Under Advanced options, change the Workspace URL field from `https://github.com/gradient-ai/TF2.4.1.git` to `https://github.com/gradient-ai/Gradient-Boosted-Trees-and-AutoML`, i.e., to point to this repository. The other options can remain the same.
+   - Start the Notebook
+ - Once the Notebook has started, navigate to the `Notebook/` directory and click `automl_in_h2o.ipynb` to run the Notebook in the same way as from the Showcase
 
-Notebook creation can also be done on the command line if desired, via `gradient notebooks create`.
+Notebook creation can also be done on the command line if desired, via `gradient notebooks create`. For more details on Notebooks, see the [documentation](https://docs.paperspace.com/gradient/explore-train-deploy/notebooks).
 
 [1] The project does not use TensorFlow, but this container is suitable. Our suite of containers is being updated as the Workflows product develops.  
 [2] The model as set up is small and so doesn't benefit from the addition of a GPU such as P4000, so C7 is preferred. C5 will also run but takes about 2x as long.
 
 ## To run the Workflow (advanced)
 
-Gradient Workflows remain subject to some [caveats](https://docs.paperspace.com/gradient/get-started/tutorials-list/workflows-sample-project#caveats) due to not-yet-supported functionality.
+Gradient Workflows remain subject to some [caveats](https://docs.paperspace.com/gradient/get-started/tutorials-list/workflows-sample-project#caveats) due to not-yet-supported functionality in the product.
 
 With access to a Gradient Private Cluster, Workflows can be run as follows:
 
