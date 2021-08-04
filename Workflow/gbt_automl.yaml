@@ -13,7 +13,7 @@
 #
 # modelOutputs -> "dstro9y6kduxqhl"
 #
-# Last updated: Jul 22nd 2021
+# Last updated: Aug 03rd 2021
 
 jobs:
 
@@ -22,7 +22,7 @@ jobs:
   CloneRepo:
     resources:
       instance-type: C5
-    inputs:
+    outputs:
       repo:
         type: volume
     uses: git-checkout@v1
@@ -37,8 +37,7 @@ jobs:
     needs:
       - CloneRepo
     inputs:
-      repo:
-        type: volume
+      repo: CloneRepo.outputs.repo
     outputs:
       modelOutputs:
         type: dataset
