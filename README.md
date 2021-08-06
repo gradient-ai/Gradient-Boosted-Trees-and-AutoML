@@ -12,9 +12,9 @@ The project and repo consist of 3 parts that can be run independently:
 
 The most common successful ML models on real business problems aside from deep learning are **gradient-boosted decision trees** (GBTs, not to be confused with the text models GPTs, or Paperspace Gradient), which have been used extensively in the enterprise. They have also won most Kaggle competitions that were not won by deep learning.
 
-TensorFlow and PyTorch are not state-of-the-art for ML outside of deep learning. We therefore use GBTs via the well-known open source [**H2O**](http://h2o.ai) library of ML models. This incorporate both **XGBoost** and other functionality such as [**AutoML**](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html) (smart hyperparameter search, not no-code), GPUs, and large scale training and deployment.
+TensorFlow and PyTorch are not state-of-the-art for ML outside of deep learning. We therefore use GBTs via the well-known open source [**H2O**](http://h2o.ai) library of ML models. This incorporates both **XGBoost** and other functionality such as [**AutoML**](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html) (smart hyperparameter search, not no-code), GPUs, and large scale training and deployment.
 
-Last updated: Jul 22nd 2021
+Last updated: Aug 06th 2021
 
 ## To run the Notebook (basic)
 
@@ -27,7 +27,7 @@ Run the Notebook file using Gradient:
  - In the Gradient GUI, create a Notebook with the following settings:
    - Name = Gradient Boosted Trees and AutoML (or any allowed name)
    - Select a runtime = TensorFlow 2.4.1 [1]
-   - Select a machine = C7 [2]
+   - Select a machine = C5 or C7 (preferred) [2]
    - Public/private = set to preferred option
    - Under Advanced options, change the Workspace URL field from `https://github.com/gradient-ai/TF2.4.1.git` to `https://github.com/gradient-ai/Gradient-Boosted-Trees-and-AutoML` to point to this repository. The other options can remain the same.
    - Start the Notebook
@@ -39,7 +39,7 @@ Notebook creation can also be done on the command line if desired, via `gradient
 
 [1] The project does not use TensorFlow, but this container is suitable. Our suite of containers is being updated as the Workflows product develops.
 
-[2] The model as set up is small and so doesn't benefit from the addition of a GPU such as P4000, so C7 is preferred. C5 will also run but takes about 2x as long.
+[2] The model as set up is small and so doesn't benefit from the addition of a GPU such as P4000, so C7 is preferred. If you do not have access to a C7 instance, C5 will also run but takes about 2x as long (~20 minutes instead of ~10 minutes).
 
 ## To run the Workflow (advanced)
 
@@ -134,13 +134,13 @@ The project was created on the command line within the Gradient container, as op
 
 The Java code is modified from the regression example online to our binary classification example, hence changing the called classes and datatypes, and the H2O artifactID from `h2o-genmodel` to `h2o-genmodel-ext-xgboost` to accomodate the XGBoost models. The inference data contains both categorical and numerical datatypes.
 
-## Conclusions and Next steps
+## Conclusions and next steps
 
 This project shows how to run state-of-the-art ML on Gradient outside of deep learning, using Notebooks, Workflows, and a working example of model deployment for the well-known open source library H2O. This opens up a large number of projects via analogy to the examples here.
 
-The caveats that make the Workflows step complex at present will disappear in future as the relevant functionality is added to Gradient, an model deployment will likewise continue to become easier.
+The caveats that make the Workflows step complex at present will disappear in future as the relevant functionality is added to Gradient, and model deployment will likewise continue to become easier.
 
-## Links & Credits
+## Links & credits
 
  - [Blog entry](blog.paperspace.com/gradient-boosted-trees-automl-h2o) for this project
  - [H2O AutoML](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html)
