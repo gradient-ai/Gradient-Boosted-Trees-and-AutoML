@@ -14,7 +14,7 @@ The most common successful ML models on real business problems aside from deep l
 
 TensorFlow and PyTorch are not state-of-the-art for ML outside of deep learning. We therefore use GBTs via the well-known open source [**H2O**](http://h2o.ai) library of ML models. This incorporates both **XGBoost** and other functionality such as [**AutoML**](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html) (smart hyperparameter search, not no-code), GPUs, and large scale training and deployment.
 
-Last updated: Aug 06th 2021
+Last updated: Aug 07th 2021
 
 ## To run the Notebook (basic)
 
@@ -50,13 +50,13 @@ With access to a Gradient Private Cluster, Workflows can be run as follows:
  - [Create a project](https://docs.paperspace.com/gradient/get-started/managing-projects#create-a-project) and optionally [get its ID](https://docs.paperspace.com/gradient/get-started/managing-projects#get-your-projects-id)
  - [Generate an API key](https://docs.paperspace.com/gradient/get-started/quick-start/install-the-cli#obtaining-an-api-key) for your project to allow access, using Team settings under the GUI top-right dropdown menu
  - [Install the Gradient CLI](https://docs.paperspace.com/gradient/get-started/quick-start/install-the-cli) on your machine
- - Use or create a [Gradient Private cluster](https://docs.paperspace.com/gradient/gradient-private-cloud/about/setup/managed-installation) and [get its ID](https://docs.paperspace.com/gradient/gradient-private-cloud/about/usage#finding-your-cluster-id)
+ - Optionally, use or create a [Gradient Private cluster](https://docs.paperspace.com/gradient/gradient-private-cloud/about/setup/managed-installation) and [get its ID](https://docs.paperspace.com/gradient/gradient-private-cloud/about/usage#finding-your-cluster-id). Otherwise the public cluster will be used.
  - [Create a new Workflow](https://docs.paperspace.com/gradient/explore-train-deploy/workflows/getting-started-with-workflows#creating-gradient-workflows) via CLI or GUI and [get its ID](https://docs.paperspace.com/gradient/explore-train-deploy/workflows/getting-started-with-workflows#running-your-first-workflow-run)
  - [Create an output Dataset](https://docs.paperspace.com/gradient/data/data-overview/private-datasets-repository#creating-a-dataset-and-dataset-version) for the Workflow, in which the model can be saved
  - Add the Dataset's ID to the `gbt_automl.yaml` file in the place indicated in that file, replacing the ID that is present there
  - [Import a placeholder file](https://docs.paperspace.com/gradient/data/data-overview/private-datasets-repository#creating-a-dataset-and-dataset-version) into the created output dataset using the GUI. You can use `placeholder.txt` in the repo `Workflow` directory, or another file.
 
-Run the Workflow from your command line with the appropriate substitutions into
+Run the Workflow from your command line with the appropriate substitutions into, where clusterID is not required if you are using the public cluster:
 
 ```
 gradient workflows run \
@@ -80,7 +80,7 @@ The results can be viewed by navigating to the Workflows tab within the project 
 
 ## To run the model deployment, from the command line (advanced)
 
-This can be run without requiring private cluster access.
+This deploys the model after model training from running the Notebook or Workflow.
 
  - Create notebook in a similar manner to the *To run the Notebook* section above, using a C5 or C7 machine, or use the one created from running that section
  - Open the Jupyter notebook interface by clicking the Jupyter symbol on the left-hand navigation bar
