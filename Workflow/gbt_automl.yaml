@@ -1,19 +1,20 @@
 # GBT+AutoML Workflow: Run H2O AutoML
 #
-# Part of the project Gradient Boosted Trees and AutoML at https://github.com/gradient-ai/Gradient-Boosted-Trees-and-AutoML
+# Part of the project Gradient Boosted Trees and AutoML project and GitHub repository at
+# https://github.com/gradient-ai/Gradient-Boosted-Trees-and-AutoML
+#
 # See that URL for instructions on how to use, under "To run the Workflow (advanced)"
 #
-# Runs the same analysis as the Notebook automl_in_h2o.ipynb, but abbreviated code and minimal text
-# A model is output that can be deployed via Java (see the GitHub repository linked above), the same as from the Notebook
+# This file runs the same analysis as the Notebook automl_in_h2o.ipynb, but abbreviated code and minimal text
+# A model is output that can be deployed via Java (see the project GitHub repository), the same as from the Notebook
 # This YAML calls gbt_automl.py
 #
-# Dataset IDs
+# Dataset ID
 #
-# The user needs to create their own Gradient managed datasets for job outputs to replace the IDs this file contains:
+# The user needs to create their own Gradient managed dataset for job outputs, using the same name as here: "gbt-automl"
+# See the project GitHub repository for details on how to do this
 #
-# modelOutputs -> "dsr5kd40ly5uag0"
-#
-# Last updated: Aug 06th 2021
+# Last updated: Aug 08th 2021
 
 jobs:
 
@@ -42,7 +43,7 @@ jobs:
       modelOutputs:
         type: dataset
         with:
-          ref: dsr5kd40ly5uag0
+          ref: gbt-automl
     uses: script@v1
     with:
       script: |-
