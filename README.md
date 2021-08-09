@@ -57,8 +57,8 @@ With access to a Gradient Private Cluster, Workflows can be run as follows:
 
 The create Workflow and create output Dataset steps can be done via the GUI or CLI. The CLI commands look like
 
-`gradient datasets create --name gbt-automl --storageProviderId sp68mc1rjhfs2q2 --apiKey <your API key>`  
-`gradient workflows create --name GBT-AutoML --projectId <your project ID> --apiKey <your API key>`
+`gradient workflows create --name GBT-AutoML --projectId <your project ID> --apiKey <your API key>`  
+`gradient datasets create --name gbt-automl --storageProviderId sp68mc1rjhfs2q2 --apiKey <your API key>`
 
 where `sp68mc1rjhfs2q2` is the current Gradient public cluster storage provider ID. Substitute the ID for your private cluster if you are using one and it is different.
 
