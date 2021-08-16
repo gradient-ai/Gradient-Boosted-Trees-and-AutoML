@@ -1,6 +1,6 @@
 # Gradient Boosted Trees and AutoML
 
-This repository is to show an example of using non-deep-learning machine learning on Gradient. It accompanies the blog entry [Gradient Boosted Trees and AutoML](blog.paperspace.com/gradient-boosted-trees-automl-h2o) on the [Paperspace blog](https://blog.paperspace.com).
+This repository is to show an example of using non-deep-learning machine learning on Gradient. It accompanies the blog entry [Gradient Boosted Trees and AutoML](https://blog.paperspace.com/gradient-boosted-trees-automl-h2o) on the [Paperspace blog](https://blog.paperspace.com).
 
 Many enterprises and other machine learning (ML) users have problems best solved by ML methods other than deep learning. This may be for reasons of interpretability, robustness to real-world data, regulatory requirements, available computing power or time, approved software, or available expertise. Gradient is able to support these approaches by enabling the use of such tools.
 
@@ -18,7 +18,7 @@ Last updated: Aug 09th 2021
 
 ## To run the Notebook (basic)
 
-Run from this project's entry on the [Gradient ML Showcase page](https://ml-showcase.paperspace.com/projects). When the Notebook is open, navigate to the `Notebook/` directory and click `automl_in_h2o.ipynb` to open the Notebook. It can then be run in the usual way by clicking `Run` under each cell in turn.
+Run from this project's entry on the [Gradient ML Showcase page](https://ml-showcase.paperspace.com/projects/gradient-boosted-trees-and-automl). When the Notebook is open, navigate to the `Notebook/` directory and click `automl_in_h2o.ipynb` to open the Notebook. It can then be run in the usual way by clicking `Run` under each cell in turn.
 
 OR
 
@@ -144,7 +144,7 @@ This project shows how to run state-of-the-art ML on Gradient outside of deep le
 
 ## Links & credits
 
- - [Blog entry](blog.paperspace.com/gradient-boosted-trees-automl-h2o) for this project
+ - [Blog entry](https://blog.paperspace.com/gradient-boosted-trees-automl-h2o) for this project
  - [H2O AutoML](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html)
  - [H2O Java deployment example](https://medium.com/spikelab/building-a-machine-learning-application-using-h2o-ai-67ce3681df9c) by Matias Aravena Gamboa at spikelab, on which ours is based
  - [Javalin](https://javalin.io)
