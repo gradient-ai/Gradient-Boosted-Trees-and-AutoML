@@ -43,7 +43,7 @@ Notebook creation can also be done on the command line if desired, via `gradient
 
 ## To run the Workflow (advanced)
 
-A Workflow can be run as follows:
+A Workflow for this project can be run as follows:
 
  - [Create a project](https://docs.paperspace.com/gradient/get-started/managing-projects#create-a-project) and optionally [get its ID](https://docs.paperspace.com/gradient/get-started/managing-projects#get-your-projects-id)
  - [Generate an API key](https://docs.paperspace.com/gradient/get-started/quick-start/install-the-cli#obtaining-an-api-key) for your project to allow access, using Team settings under the GUI top-right dropdown menu
