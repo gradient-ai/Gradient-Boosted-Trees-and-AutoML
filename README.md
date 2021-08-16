@@ -6,9 +6,9 @@ Many enterprises and other machine learning (ML) users have problems best solved
 
 The project and repo consist of 3 parts that can be run independently:
 
-* **Notebook/** = Gradient Boosted Trees and AutoML, no deployment
-* **Workflow/** = Same as notebook but in a Gradient Workflow
-* **Command_Line/** = **Deployment** of model to production
+* **Notebook** = Gradient Boosted Trees and AutoML, no deployment
+* **Workflow** = Same as notebook but in a Gradient Workflow
+* **Command Line** = **Deployment** of model to production
 
 The most common successful ML models on real business problems aside from deep learning are **gradient-boosted decision trees** (GBTs, not to be confused with the text models GPTs, or Paperspace Gradient), which have been used extensively in the enterprise. They have also won most Kaggle competitions that were not won by deep learning.
 
@@ -37,13 +37,13 @@ Notebook creation can also be done on the command line if desired, via `gradient
 
 *Notes*
 
-[1] The project does not use TensorFlow, but this container is suitable. Our suite of containers is being updated as the Workflows product develops.
+[1] The project does not use TensorFlow, but this container is suitable.
 
 [2] The model as set up is small and so doesn't benefit from the addition of a GPU such as P4000, so C7 is preferred. If you do not have access to a C7 instance, C5 will also run but takes about 2x as long (~20 minutes instead of ~10 minutes).
 
 ## To run the Workflow (advanced)
 
-Workflows can be run as follows:
+A Workflow can be run as follows:
 
  - [Create a project](https://docs.paperspace.com/gradient/get-started/managing-projects#create-a-project) and optionally [get its ID](https://docs.paperspace.com/gradient/get-started/managing-projects#get-your-projects-id)
  - [Generate an API key](https://docs.paperspace.com/gradient/get-started/quick-start/install-the-cli#obtaining-an-api-key) for your project to allow access, using Team settings under the GUI top-right dropdown menu
@@ -141,8 +141,6 @@ The Java code is modified from the regression example online to our binary class
 ## Conclusions and next steps
 
 This project shows how to run state-of-the-art ML on Gradient outside of deep learning, using Notebooks, Workflows, and a working example of model deployment for the well-known open source library H2O. This opens up a large number of projects via analogy to the examples here.
-
-The caveats that make the Workflows step complex at present will disappear in future as the relevant functionality is added to Gradient, and model deployment will likewise continue to become easier.
 
 ## Links & credits
 
