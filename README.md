@@ -43,32 +43,30 @@ Notebook creation can also be done on the command line if desired, via `gradient
 
 ## To run the Workflow (advanced)
 
-Gradient Workflows remain subject to some [caveats](https://docs.paperspace.com/gradient/get-started/tutorials-list/workflows-sample-project#caveats) due to not-yet-supported functionality in the product.
-
-With access to a Gradient Private Cluster, Workflows can be run as follows:
+Workflows can be run as follows:
 
  - [Create a project](https://docs.paperspace.com/gradient/get-started/managing-projects#create-a-project) and optionally [get its ID](https://docs.paperspace.com/gradient/get-started/managing-projects#get-your-projects-id)
  - [Generate an API key](https://docs.paperspace.com/gradient/get-started/quick-start/install-the-cli#obtaining-an-api-key) for your project to allow access, using Team settings under the GUI top-right dropdown menu
  - [Install the Gradient CLI](https://docs.paperspace.com/gradient/get-started/quick-start/install-the-cli) on your machine
- - Optionally, use or create a [Gradient Private cluster](https://docs.paperspace.com/gradient/gradient-private-cloud/about/setup/managed-installation) and [get its ID](https://docs.paperspace.com/gradient/gradient-private-cloud/about/usage#finding-your-cluster-id). Otherwise the public cluster will be used.
  - [Create a new Workflow](https://docs.paperspace.com/gradient/explore-train-deploy/workflows/getting-started-with-workflows#creating-gradient-workflows) and [get its ID](https://docs.paperspace.com/gradient/explore-train-deploy/workflows/getting-started-with-workflows#running-your-first-workflow-run)
  - [Create an output Dataset](https://docs.paperspace.com/gradient/data/data-overview/private-datasets-repository#creating-a-dataset-and-dataset-version) named `gbt-automl` for the Workflow, in which the model can be saved
 
 The create Workflow and create output Dataset steps can be done via the GUI or CLI. The CLI commands look like
 
 `gradient workflows create --name GBT-AutoML --projectId <your project ID> --apiKey <your API key>`  
-`gradient datasets create --name gbt-automl --storageProviderId sp68mc1rjhfs2q2 --apiKey <your API key>`
+`gradient storageProviders list --apiKey <your API key>`
 
-where `sp68mc1rjhfs2q2` is the current Gradient public cluster storage provider ID. Substitute the storage provider ID for your private cluster if you are using one and it is different.
+Note the `storage provider ID` of the **Gradient Managed** storage provider.
+
+`gradient datasets create --name gbt-automl --storageProviderId <your storage provider ID> --apiKey <your API key>`
 
 The usage of `--apiKey` on the command line is optional: you can also store a key in a JSON file, e.g., `~/.paperspace/config.json` to avoid having to add it to each command. Here we leave it present. Another option is the environment variable `PAPERSPACE_API_KEY`. See [connecting your account](https://docs.paperspace.com/gradient/get-started/quick-start/install-the-cli#connecting-your-account) for more details.
 
-Run the Workflow from your command line with the appropriate substitutions into the following, where clusterID is not required if you are using the public cluster:
+Run the Workflow from your command line with the appropriate substitutions into the following:
 
 ```
 gradient workflows run \
   --id         <your workflow ID> \
-  --clusterId  <Your private cluster ID> \
   --path       your/path/to/gbt_automl.yaml \
   --apiKey     <Your API key>
 ```
@@ -78,7 +76,6 @@ It will look something like
 ```
 gradient workflows run \
   --id         abc123de-f567-ghi8-90jk-l123mno456pq \
-  --clusterId  cdefghijk \
   --path       ./Workflow/gbt_automl.yaml \
   --apiKey     ab12cd34ef56gh78ij90kl12mn34op
 ```
