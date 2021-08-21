@@ -1,6 +1,6 @@
 # Gradient Boosted Trees and AutoML
 
-This repository is to show an example of using non-deep-learning machine learning on Gradient. It accompanies the blog entry [Gradient Boosted Trees and AutoML](https://blog.paperspace.com/gradient-boosted-trees-automl-h2o) on the [Paperspace blog](https://blog.paperspace.com).
+This repository is to show an example of using non-deep-learning machine learning on Gradient. It accompanies the blog entry [Gradient Boosted Trees and AutoML](blog.paperspace.com/gradient-boosted-trees-automl-h2o) on the [Paperspace blog](https://blog.paperspace.com).
 
 Many enterprises and other machine learning (ML) users have problems best solved by ML methods other than deep learning. This may be for reasons of interpretability, robustness to real-world data, regulatory requirements, available computing power or time, approved software, or available expertise. Gradient is able to support these approaches by enabling the use of such tools.
 
@@ -8,17 +8,17 @@ The project and repo consist of 3 parts that can be run independently:
 
 * **Notebook** = Gradient Boosted Trees and AutoML, no deployment
 * **Workflow** = Same as notebook but in a Gradient Workflow
-* **Command Line** = **Deployment** of model to production
+* **Command_Line** = **Deployment** of model to production
 
 The most common successful ML models on real business problems aside from deep learning are **gradient-boosted decision trees** (GBTs, not to be confused with the text models GPTs, or Paperspace Gradient), which have been used extensively in the enterprise. They have also won most Kaggle competitions that were not won by deep learning.
 
 TensorFlow and PyTorch are not state-of-the-art for ML outside of deep learning. We therefore use GBTs via the well-known open source [**H2O**](http://h2o.ai) library of ML models. This incorporates both **XGBoost** and other functionality such as [**AutoML**](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html) (smart hyperparameter search, not no-code), GPUs, and large scale training and deployment.
 
-Last updated: Aug 16th 2021
+Last updated: Aug 09th 2021
 
 ## To run the Notebook (basic)
 
-Run from this project's entry on the [Gradient ML Showcase page](https://ml-showcase.paperspace.com/projects/gradient-boosted-trees-and-automl). When the Notebook is open, navigate to the `Notebook/` directory and click `automl_in_h2o.ipynb` to open the Notebook. It can then be run in the usual way by clicking `Run` under each cell in turn.
+Run from this project's entry on the [Gradient ML Showcase page](https://ml-showcase.paperspace.com/projects). When the Notebook is open, navigate to the `Notebook/` directory and click `automl_in_h2o.ipynb` to open the Notebook. It can then be run in the usual way by clicking `Run` under each cell in turn.
 
 OR
 
@@ -27,7 +27,7 @@ Run the Notebook file using Gradient:
  - In the Gradient GUI, create a Notebook with the following settings:
    - Name = Gradient Boosted Trees and AutoML (or any allowed name)
    - Select a runtime = TensorFlow 2.4.1 [1]
-   - Select a machine = C3 [2]
+   - Select a machine = C5 or C7 (preferred) [2]
    - Public/private = set to preferred option
    - Under Advanced options, change the Workspace URL field from `https://github.com/gradient-ai/TF2.4.1.git` to `https://github.com/gradient-ai/Gradient-Boosted-Trees-and-AutoML` to point to this repository. The other options can remain the same.
    - Start the Notebook
@@ -37,18 +37,18 @@ Notebook creation can also be done on the command line if desired, via `gradient
 
 *Notes*
 
-[1] The project does not use TensorFlow, but this container is suitable.
+[1] The project does not use TensorFlow, but this container is suitable. Our suite of containers is being updated as the Workflows product develops.
 
-[2] The model as set up is small and so doesn't benefit from the addition of a GPU such as P4000, so C3 works well. If you have access to a C7 instance, it will run about twice as fast, in about 10 minutes instead of 20 minutes.
+[2] The model as set up is small and so doesn't benefit from the addition of a GPU such as P4000, so C7 is preferred. If you do not have access to a C7 instance, C5 will also run but takes about 2x as long (~20 minutes instead of ~10 minutes).
 
 ## To run the Workflow (advanced)
 
-A Workflow for this project can be run as follows:
+Workflows can be run as follows:
 
  - [Create a project](https://docs.paperspace.com/gradient/get-started/managing-projects#create-a-project) and optionally [get its ID](https://docs.paperspace.com/gradient/get-started/managing-projects#get-your-projects-id)
  - [Generate an API key](https://docs.paperspace.com/gradient/get-started/quick-start/install-the-cli#obtaining-an-api-key) for your project to allow access, using Team settings under the GUI top-right dropdown menu
  - [Install the Gradient CLI](https://docs.paperspace.com/gradient/get-started/quick-start/install-the-cli) on your machine
- - [Create a new Workflow](https://docs.paperspace.com/gradient/explore-train-deploy/workflows/getting-started-with-workflows#creating-gradient-workflows) and [get its ID](https://docs.paperspace.com/gradient/explore-train-deploy/workflows/getting-started-with-workflows#create-a-workflow)
+ - [Create a new Workflow](https://docs.paperspace.com/gradient/explore-train-deploy/workflows/getting-started-with-workflows#creating-gradient-workflows) and [get its ID](https://docs.paperspace.com/gradient/explore-train-deploy/workflows/getting-started-with-workflows#running-your-first-workflow-run)
  - [Create an output Dataset](https://docs.paperspace.com/gradient/data/data-overview/private-datasets-repository#creating-a-dataset-and-dataset-version) named `gbt-automl` for the Workflow, in which the model can be saved
 
 The create Workflow and create output Dataset steps can be done via the GUI or CLI. The CLI commands look like
@@ -144,7 +144,7 @@ This project shows how to run state-of-the-art ML on Gradient outside of deep le
 
 ## Links & credits
 
- - [Blog entry](https://blog.paperspace.com/gradient-boosted-trees-automl-h2o) for this project
+ - [Blog entry](blog.paperspace.com/gradient-boosted-trees-automl-h2o) for this project
  - [H2O AutoML](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html)
  - [H2O Java deployment example](https://medium.com/spikelab/building-a-machine-learning-application-using-h2o-ai-67ce3681df9c) by Matias Aravena Gamboa at spikelab, on which ours is based
  - [Javalin](https://javalin.io)
