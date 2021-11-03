@@ -14,7 +14,7 @@ The most common successful ML models on real business problems aside from deep l
 
 TensorFlow and PyTorch are not state-of-the-art for ML outside of deep learning. We therefore use GBTs via the well-known open source [**H2O**](http://h2o.ai) library of ML models. This incorporates both **XGBoost** and other functionality such as [**AutoML**](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html) (smart hyperparameter search, not no-code), GPUs, and large scale training and deployment.
 
-Last updated: Aug 16th 2021
+Last updated: Nov 03rd 2021
 
 ## To run the Notebook (basic)
 
@@ -26,8 +26,8 @@ Run the Notebook file using Gradient:
 
  - In the Gradient GUI, create a Notebook with the following settings:
    - Name = Gradient Boosted Trees and AutoML (or any allowed name)
-   - Select a runtime = TensorFlow 2.4.1 [1]
-   - Select a machine = C3 [2]
+   - Select a runtime = TensorFlow 2.6.0 [1]
+   - Select a machine = C4 [2]
    - Public/private = set to preferred option
    - Under Advanced options, change the Workspace URL field from `https://github.com/gradient-ai/TF2.4.1.git` to `https://github.com/gradient-ai/Gradient-Boosted-Trees-and-AutoML` to point to this repository. The other options can remain the same.
    - Start the Notebook
@@ -39,7 +39,7 @@ Notebook creation can also be done on the command line if desired, via `gradient
 
 [1] The project does not use TensorFlow, but this container is suitable.
 
-[2] The model as set up is small and so doesn't benefit from the addition of a GPU such as P4000, so C3 works well. If you have access to a C7 instance, it will run about twice as fast, in about 10 minutes instead of 20 minutes.
+[2] The model as set up is small and so doesn't benefit from the addition of a GPU such as P4000, so C4 works well. If you have access to a C7 instance, it may run faster.
 
 ## To run the Workflow (advanced)
 
