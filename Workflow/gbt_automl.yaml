@@ -52,4 +52,4 @@ jobs:
         cp -R /inputs/repo /gbt_automl
         cd /gbt_automl/Workflow
         python gbt_automl.py
-      image: nvcr.io/nvidia/tensorflow:21.09-tf2-py3
+      image: tensorflow/tensorflow:2.4.1-gpu-jupyter
