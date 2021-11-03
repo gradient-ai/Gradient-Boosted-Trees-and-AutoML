@@ -14,7 +14,7 @@
 # The user needs to create their own Gradient managed dataset for job outputs, using the same name as here: "gbt-automl"
 # See the project GitHub repository for details on how to do this
 #
-# Last updated: Aug 16th 2021
+# Last updated: Nov 03rd 2021
 
 jobs:
 
@@ -22,7 +22,7 @@ jobs:
 
   CloneRepo:
     resources:
-      instance-type: C3
+      instance-type: C4
     outputs:
       repo:
         type: volume
@@ -34,7 +34,7 @@ jobs:
 
   GBTAutoML:
     resources:
-      instance-type: C3 # Or C5/C7, if they are available to you. C7 will run about 2x as fast
+      instance-type: C4 # Or C5/C7, if they are available to you. C7 will run faster.
     needs:
       - CloneRepo
     inputs:
@@ -52,4 +52,4 @@ jobs:
         cp -R /inputs/repo /gbt_automl
         cd /gbt_automl/Workflow
         python gbt_automl.py
-      image: tensorflow/tensorflow:2.4.1-gpu-jupyter
+      image: nvcr.io/nvidia/tensorflow:21.09-tf2-py3
