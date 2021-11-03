@@ -26,7 +26,7 @@ Run the Notebook file using Gradient:
 
  - In the Gradient GUI, create a Notebook with the following settings:
    - Name = Gradient Boosted Trees and AutoML (or any allowed name)
-   - Select a runtime = TensorFlow 2.6.0 [1]
+   - Select a runtime = TensorFlow 2.4.1 [1]
    - Select a machine = C4 [2]
    - Public/private = set to preferred option
    - Under Advanced options, change the Workspace URL field from `https://github.com/gradient-ai/TF2.4.1.git` to `https://github.com/gradient-ai/Gradient-Boosted-Trees-and-AutoML` to point to this repository. The other options can remain the same.
