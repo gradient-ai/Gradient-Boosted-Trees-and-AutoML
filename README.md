@@ -14,7 +14,7 @@ The most common successful ML models on real business problems aside from deep l
 
 TensorFlow and PyTorch are not state-of-the-art for ML outside of deep learning. We therefore use GBTs via the well-known open source [**H2O**](http://h2o.ai) library of ML models. This incorporates both **XGBoost** and other functionality such as [**AutoML**](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html) (smart hyperparameter search, not no-code), GPUs, and large scale training and deployment.
 
-Last updated: Nov 03rd 2021
+Last updated: Nov 10th 2021
 
 ## To run the Notebook (basic)
 
@@ -24,12 +24,16 @@ OR
 
 Run the Notebook file using Gradient:
 
- - In the Gradient GUI, create a Notebook with the following settings:
+ - In the Gradient GUI, create a Project with a name, e.g., Gradient Boosted Trees and AutoML
+ - Within the project, create a Notebook with the following settings:
    - Name = Gradient Boosted Trees and AutoML (or any allowed name)
-   - Select a runtime = TensorFlow 2.4.1 [1]
-   - Select a machine = C4 [2]
+   - Don't select any of the boxes under Select a runtime
+   - Select a machine = C4 [1]
    - Public/private = set to preferred option
-   - Under Advanced options, change the Workspace URL field from `https://github.com/gradient-ai/TF2.4.1.git` to `https://github.com/gradient-ai/Gradient-Boosted-Trees-and-AutoML` to point to this repository. The other options can remain the same.
+   - Under Advanced options
+     - Change the Workspace URL field from `https://github.com/gradient-ai/TensorFlow` to `https://github.com/gradient-ai/Gradient-Boosted-Trees-and-AutoML` to point to this repository. The other options can remain the same.
+     - Set the Container Name to `tensorflow/tensorflow:2.4.1-gpu-jupyter` [2,3]
+     - Set the Container command to `jupyter notebook --allow-root --ip=0.0.0.0 --no-browser --NotebookApp.trust_xheaders=True --NotebookApp.disable_check_xsrf=False --NotebookApp.allow_remote_access=True --NotebookApp.allow_origin='*'`
    - Start the Notebook
  - Once the Notebook has started, navigate to the `Notebook/` directory and click `automl_in_h2o.ipynb` to run the Notebook in the same way as from the Showcase
 
@@ -37,9 +41,11 @@ Notebook creation can also be done on the command line if desired, via `gradient
 
 *Notes*
 
-[1] The project does not use TensorFlow, but this container is suitable.
+[1] The model as set up is small and so doesn't benefit from the addition of a GPU such as P4000, so C4 works well. If you have access to a C7 instance, it may run faster.
 
-[2] The model as set up is small and so doesn't benefit from the addition of a GPU such as P4000, so C4 works well. If you have access to a C7 instance, it may run faster.
+[2] The project does not use TensorFlow, but this container is acceptable because we do not yet have an H2O container. Originally it was coded on `tensorflow/tensorflow:2.4.1-gpu-jupyter`, and it auto-runs on this if invoked from the Showcase. Choosing a later container such as our current recommended one will probably work but is not guaranteed, hence we fix to this one.
+
+[3] In fact, there is a further caveat to invoking the notebook without the Showcase, which is that the `jdk.install()` line does not allow the Java minor version to be fixed, so over time newer versions will be installed. So far this has been fine, but non-fixed versions of software could eventually break. This could be solved by defining a container containing Java, so that it doesn't have to be installed from the Notebook.
 
 ## To run the Workflow (advanced)
 
@@ -62,7 +68,7 @@ Note the `storage provider ID` of the **Gradient Managed** storage provider.
 
 The usage of `--apiKey` on the command line is optional: you can also store a key in a JSON file, e.g., `~/.paperspace/config.json` to avoid having to add it to each command. Here we leave it present. Another option is the environment variable `PAPERSPACE_API_KEY`. See [connecting your account](https://docs.paperspace.com/gradient/get-started/quick-start/install-the-cli#connecting-your-account) for more details.
 
-Run the Workflow from your command line with the appropriate substitutions into the following:
+ - Run the Workflow from your command line with the appropriate substitutions into the following:
 
 ```
 gradient workflows run \
@@ -79,6 +85,8 @@ gradient workflows run \
   --path       ./Workflow/gbt_automl.yaml \
   --apiKey     ab12cd34ef56gh78ij90kl12mn34op
 ```
+
+To get `your/path/to/gbt_automl.yaml`, clone (`git clone https://github.com/gradient-ai/Gradient-Boosted-Trees-and-AutoML`) or download the repo to where you are running the command line.
 
 The results can be viewed by navigating to the Workflows tab within the project where you created your Workflow.
 
