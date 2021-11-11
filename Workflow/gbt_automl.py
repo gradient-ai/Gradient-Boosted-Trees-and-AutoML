@@ -6,7 +6,7 @@
 # Some print statements are added so outputs that went to cells in the Notebook can be seen in the Workflow log
 # This script is called by the Workflow YAML automl.yaml
 #
-# Last updated: Jul 21st 2021
+# Last updated: Nov 10th 2021
 
 # Setup
 
@@ -14,9 +14,10 @@ import jdk
 import os
 import subprocess
 
-jdk.install('11', jre=True)
+jdk_str = jdk.install('11', jre=True)
 
-os.environ['PATH'] = "/root/.jre/jdk-11.0.11+9-jre/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+os.environ['PATH'] = jdk_str + "/bin:" + os.environ['PATH']
+
 newpath = subprocess.run('echo $PATH', shell=True, check=True, stdout=subprocess.PIPE, universal_newlines=True)
 print(newpath)
 
