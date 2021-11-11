@@ -26,7 +26,6 @@ Run the Notebook file using Gradient:
 
  - In the Gradient GUI, create a Project with a name, e.g., Gradient Boosted Trees and AutoML
  - Within the project, create a Notebook with the following settings:
-   - Name = Gradient Boosted Trees and AutoML (or any allowed name)
    - Don't select any of the boxes under Select a runtime
    - Select a machine = C4 [1]
    - Public/private = set to preferred option
@@ -36,6 +35,7 @@ Run the Notebook file using Gradient:
      - Set the Container command to `jupyter notebook --allow-root --ip=0.0.0.0 --no-browser --NotebookApp.trust_xheaders=True --NotebookApp.disable_check_xsrf=False --NotebookApp.allow_remote_access=True --NotebookApp.allow_origin='*'`
    - Start the Notebook
  - Once the Notebook has started, navigate to the `Notebook/` directory and click `automl_in_h2o.ipynb` to run the Notebook in the same way as from the Showcase
+ - You can rename the notebook from "Untitled" if you want, using the GUI
 
 Notebook creation can also be done on the command line if desired, via `gradient notebooks create`. For more details on Notebooks, see the [documentation](https://docs.paperspace.com/gradient/explore-train-deploy/notebooks).
 
