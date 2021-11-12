@@ -14,7 +14,7 @@ The most common successful ML models on real business problems aside from deep l
 
 TensorFlow and PyTorch are not state-of-the-art for ML outside of deep learning. We therefore use GBTs via the well-known open source [**H2O**](http://h2o.ai) library of ML models. This incorporates both **XGBoost** and other functionality such as [**AutoML**](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html) (smart hyperparameter search, not no-code), GPUs, and large scale training and deployment.
 
-Last updated: Nov 10th 2021
+Last updated: Nov 12th 2021
 
 ## To run the Notebook (basic)
 
@@ -29,10 +29,11 @@ Run the Notebook file using Gradient:
    - Don't select any of the boxes under Select a runtime
    - Select a machine = C4 [1]
    - Public/private = set to preferred option
-   - Under Advanced options
-     - Change the Workspace URL field from `https://github.com/gradient-ai/TensorFlow` to `https://github.com/gradient-ai/Gradient-Boosted-Trees-and-AutoML` to point to this repository. The other options can remain the same.
+   - Under Advanced options:
+     - Set the Workspace URL field to `https://github.com/gradient-ai/Gradient-Boosted-Trees-and-AutoML` to point to this repository
      - Set the Container Name to `tensorflow/tensorflow:2.4.1-gpu-jupyter` [2,3]
      - Set the Container command to `jupyter notebook --allow-root --ip=0.0.0.0 --no-browser --NotebookApp.trust_xheaders=True --NotebookApp.disable_check_xsrf=False --NotebookApp.allow_remote_access=True --NotebookApp.allow_origin='*'`
+     - The other options can remain unset
    - Start the Notebook
  - Once the Notebook has started, navigate to the `Notebook/` directory and click `automl_in_h2o.ipynb` to run the Notebook in the same way as from the Showcase
  - You can rename the notebook from "Untitled" if you want, using the GUI
